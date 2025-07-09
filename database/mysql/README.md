@@ -75,3 +75,6 @@ kubectl apply -k database/mysql/overlays
     ```sh
     kustomize build database/mysql/overlays
     ``` 
+```sh
+mysql-0.mysql.goormthon-4.svc.cluster.local:3306
+```
