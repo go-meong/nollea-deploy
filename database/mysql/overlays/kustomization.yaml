@@ -9,7 +9,7 @@ resources:
 
 images:
   - name: mysql
-    newTag: 8.0.45
+    newTag: lts
 
 patches:
   - target:
