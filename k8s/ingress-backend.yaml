@@ -15,4 +15,4 @@ spec:
               service:
                 name: nollea-backend
                 port:
-                  number: 8080  # 백엔드 서비스 포트에 맞게 수정해줘야 함
+                  number: 80
