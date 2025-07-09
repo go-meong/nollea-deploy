@@ -21,12 +21,12 @@ spec:
             - name: API_KEY
               valueFrom:
                 configMapKeyRef:
-                  name: team4-config
+                  name: nollea-backend-config
                   key: OPENAPI_KEY
             - name: OPENAPI_KEY
               valueFrom:
                 configMapKeyRef:
-                  name: team4-config
+                  name: nollea-backend-config
                   key: OPENAPI_KEY
           volumeMounts:
             - name: config-volume
@@ -36,7 +36,6 @@ spec:
         - name: config-volume
           configMap:
             name: nollea-backend-config
-
 ---
 apiVersion: v1
 kind: Service
