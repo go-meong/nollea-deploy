@@ -19,7 +19,7 @@ patches:
         value:
           MONGO_INITDB_ROOT_USERNAME: goorm
           MONGO_INITDB_ROOT_PASSWORD: goorm123!
-          # MONGO_INITDB_DATABASE: myapp
+          MONGO_INITDB_DATABASE: nollea
   
   # colloction 생성 시 아래 코드를 참고하여 사용하세요
   # host: mongodb-0.mongodb.<team-name>.svc.cluster.local:27017 
