@@ -10,7 +10,7 @@ images:
     newTag: latest # change to the MongoDB version you want to use
 
 patches:
-  - target: 
+  - target:
       kind: Secret
       name: mongodb-secret
     patch: |-
@@ -20,26 +20,23 @@ patches:
           MONGO_INITDB_ROOT_USERNAME: goorm
           MONGO_INITDB_ROOT_PASSWORD: goorm123
           MONGO_INITDB_DATABASE: nollea
-  
-  # colloction 생성 시 아래 코드를 참고하여 사용하세요
-  # host: mongodb-0.mongodb.<team-name>.svc.cluster.local:27017 
 
-  # - target:
-  #     kind: Job
-  #     name: mongosh
-  #   patch: |-
-  #     apiVersion: batch/v1
-  #     kind: Job
-  #     metadata:
-  #       name: mongosh
-  #     spec:
-  #       template:
-  #         spec:
-  #           containers:
-  #           - name: mongosh
-  #             command:
-  #             - /bin/bash
-  #             - -c
-  #             - |
-  #               mongosh "mongodb://$(MONGO_USERNAME):$(MONGO_PASSWORD)@mongodb-0.mongodb.<team-name>.svc.cluster.local:27017/admin" \
-  #               --eval 'db = db.getSiblingDB("myapp"); db.createCollection("init_check"); print("✅ myapp DB and collection created.");'
+  - target:
+       kind: Job
+       name: mongosh
+    patch: |-
+       apiVersion: batch/v1
+       kind: Job
+       metadata:
+         name: mongosh
+       spec:
+         template:
+           spec:
+             containers:
+             - name: mongosh
+               command:
+               - /bin/bash
+               - -c
+               - |
+                 mongosh "mongodb://$(MONGO_USERNAME):$(MONGO_PASSWORD)@mongodb-0.mongodb.goormthon-4.svc.cluster.local:27017/admin" \
+                 --eval 'db = db.getSiblingDB("nollea"); db.createCollection("init_check"); print("✅ myapp DB and collection created.");'
