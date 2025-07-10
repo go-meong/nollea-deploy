@@ -32,6 +32,11 @@ spec:
             secretKeyRef:
               name: mongodb-secret
               key: MONGO_INITDB_ROOT_PASSWORD
+        - name: MONGO_INITDB_DATABASE
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: MONGO_INITDB_DATABASE
         volumeMounts:
         - name: mongodb-data
           mountPath: /data/db
