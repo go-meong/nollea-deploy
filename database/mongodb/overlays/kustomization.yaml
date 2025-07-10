@@ -39,4 +39,4 @@ patches:
                - -c
                - |
                  mongosh "mongodb://$(MONGO_USERNAME):$(MONGO_PASSWORD)@mongodb-0.mongodb.goormthon-4.svc.cluster.local:27017/admin" \
-                 --eval 'db = db.getSiblingDB("nollea"); db.createCollection("init_check"); print("✅ myapp DB and collection created.");'
+                 --eval 'db = db.getSiblingDB("nollea"); db.createUser({user: "goorm", pwd: "goorm123", roles: [{ role: "readWrite",  db: "nollea" }]}); db.createCollection("init_check"); print("✅ myapp DB and collection created.");'
