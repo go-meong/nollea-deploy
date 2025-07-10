@@ -18,7 +18,7 @@ patches:
         path: /stringData
         value:
           MONGO_INITDB_ROOT_USERNAME: goorm
-          MONGO_INITDB_ROOT_PASSWORD: goorm123!
+          MONGO_INITDB_ROOT_PASSWORD: goorm123
           MONGO_INITDB_DATABASE: nollea
   
   # colloction 생성 시 아래 코드를 참고하여 사용하세요
