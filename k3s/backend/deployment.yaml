@@ -19,6 +19,6 @@ spec:
       - name: ghcr-secret 
       containers:
       - name: nollea-be
-        image: ghcr.io/mswootest/nollea-be:latest
+        image: ghcr.io/go-meong/nollea-be:v0.0.1
         ports:
         - containerPort: 8000
