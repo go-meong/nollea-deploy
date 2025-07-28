@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nollea-be
+  namespace: nollea
+  labels:
+    app: nollea-be
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nollea-be
+  template:
+    metadata:
+      labels:
+        app: nollea-be
+    spec:
+      imagePullSecrets:
+      - name: ghcr-secret 
+      containers:
+      - name: nollea-be
+        image: ghcr.io/mswootest/nollea-be:latest
+        ports:
+        - containerPort: 8000

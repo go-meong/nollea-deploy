@@ -1,0 +1,47 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nollea-ingress
+  namespace: nollea
+spec:
+  ingressClassName: traefik
+  tls:
+  - hosts:
+    - nollea.duckdns.org
+    secretName: nollea-tls
+  rules:
+  # 외부 도메인 접근 (FE/BE 구분)
+  - host: nollea.duckdns.org
+    http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: nollea-be
+            port:
+              number: 8080
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nollea-fe
+            port:
+              number: 80
+  # 내부망 IP 접근 (host 없음 = 모든 host)
+  - http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: nollea-be
+            port:
+              number: 8080
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nollea-fe
+            port:
+              number: 80
