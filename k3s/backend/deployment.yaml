@@ -19,7 +19,7 @@ spec:
       - name: ghcr-secret 
       containers:
       - name: nollea-be
-        image: ghcr.io/go-meong/nollea-be:v0.0.2
+        image: ghcr.io/go-meong/nollea-be:v0.0.3
         envFrom:
         - configMapRef:
             name: nollea-config
