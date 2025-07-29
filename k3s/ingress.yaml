@@ -3,8 +3,6 @@ kind: Ingress
 metadata:
   name: nollea-ingress
   namespace: nollea
-  annotations:
-    traefik.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: traefik
   tls:
