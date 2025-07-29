@@ -20,7 +20,7 @@ spec:
           service:
             name: nollea-be
             port:
-              number: 8080
+              number: 80
       - path: /
         pathType: Prefix
         backend:
@@ -37,7 +37,7 @@ spec:
           service:
             name: nollea-be
             port:
-              number: 8080
+              number: 80
       - path: /
         pathType: Prefix
         backend:
