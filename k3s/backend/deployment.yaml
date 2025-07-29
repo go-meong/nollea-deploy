@@ -22,8 +22,8 @@ spec:
         image: ghcr.io/go-meong/nollea-be:v0.0.2
         envFrom:
         - configMapRef:
-          name: nollea-config
+            name: nollea-config
         - secretRef:
-          name: nollea-secrets
+            name: nollea-secrets
         ports:
         - containerPort: 8000
