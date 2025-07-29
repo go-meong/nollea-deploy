@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nollea-fe
+  namespace: nollea
+  labels:
+    app: nollea-fe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nollea-fe
+  template:
+    metadata:
+      labels:
+        app: nollea-fe
+    spec:
+      imagePullSecrets:
+      - name: ghcr-secret 
+      containers:
+      - name: nollea-fe
+        image: ghcr.io/go-meong/nollea-fe:latest
+        ports:
+          - containerPort: 3000
