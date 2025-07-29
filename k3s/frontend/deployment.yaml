@@ -19,6 +19,6 @@ spec:
       - name: ghcr-secret 
       containers:
       - name: nollea-fe
-        image: ghcr.io/go-meong/nollea-fe:latest
+        image: ghcr.io/go-meong/nollea-fe:v0.0.1
         ports:
           - containerPort: 3000
